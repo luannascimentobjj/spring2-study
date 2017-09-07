@@ -14,8 +14,7 @@
 			type="image/ico" />
 		<link href="https://plus.googlecom/108540024862647200608"
 			rel="publisher"/>
-		<title>Livros de Java, SOA, Android, iPhone, Ruby on Rails e
-			muito mais - Casa do Código</title>
+		<title>Livros de Java, SOA, Android, iPhone, Ruby on Rails e muito mais - Casa do Código</title>
 		<link href="${contextPath}resources/css/cssbase-min.css"
 			rel="stylesheet" type="text/css" media="all" />
 		<link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700'
@@ -52,11 +51,15 @@
 				<nav id="main-nav">
 					
 					<ul class="clearfix">
-						<li><a href="/cart" rel="nofollow">Carrinho</a></li>
-
+					
+						<li><a href="${s:mvcUrl('PC#listar').build() }" rel="nofollow">Lista de Produtos</a></li>
+						
+						<li><a href="${s:mvcUrl('PC#form').build() }" rel="nofollow">Cadastro de Produtos</a></li>
+						
+						<li><a href="${s:mvcUrl('CCC#itens').build() }" rel="nofollow">Seu Carrinho</a></li>
+						
 						<li><a href="/pages/sobre-a-casa-do-codigo" rel="nofollow">Sobre Nós</a></li>
 
-						<li><a href="/pages/perguntas-frequentes" rel="nofollow">Perguntas Frequentes</a></li>
 					</ul>
 				</nav>
 			</div>
