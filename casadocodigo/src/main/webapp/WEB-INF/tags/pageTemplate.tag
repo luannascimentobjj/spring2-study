@@ -2,6 +2,7 @@
 <%@ taglib uri='http://java.sun.com/jsp/jstl/core' prefix='c'%>
 <%@attribute name="titulo" required="true"%>
 <%@attribute name="bodyClass" required="false" %>
+<%@attribute name="extraScripts" fragment="true" %>
 
 
 <!DOCTYPE html>
@@ -51,3 +52,6 @@
 <jsp:doBody/>
 
 <%@include file="/WEB-INF/views/rodape.jsp" %>
+
+<jsp:invoke fragment="extraScripts" />
+
