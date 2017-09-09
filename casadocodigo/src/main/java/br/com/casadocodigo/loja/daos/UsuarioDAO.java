@@ -12,15 +12,13 @@ import org.springframework.stereotype.Repository;
 import br.com.casadocodigo.loja.models.Usuario;
 
 @Repository
-public class UsuarioDAO implements UserDetailsService {
+public class UsuarioDAO implements UserDetailsService{
 
 	@PersistenceContext
 	private EntityManager manager;
 	
 	public Usuario loadUserByUsername(String email) {
-		List<Usuario> usuarios = manager
-				.createQuery("select u from Usuario u where u.email = :email",
-				Usuario.class)
+		List<Usuario> usuarios = manager.createQuery("select u from Usuario u where u.email = :email", Usuario.class)
 			.setParameter("email", email)
 			.getResultList();
 		
@@ -31,9 +29,10 @@ public class UsuarioDAO implements UserDetailsService {
 		return usuarios.get(0);
 	}
 
-	public void gravar(Usuario usuario) {
-		manager.persist(usuario);
-	}
+
+	//	public void gravar(Usuario usuario) {
+	//		manager.persist(usuario);
+	//	}
 
 }
 

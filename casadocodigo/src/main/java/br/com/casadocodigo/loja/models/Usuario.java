@@ -4,19 +4,18 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 @Entity
-public class Usuario implements UserDetails {
+public class Usuario implements UserDetails{
 
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 8875792777127007029L;
 
 	@Id
 	private String email;
@@ -25,8 +24,8 @@ public class Usuario implements UserDetails {
 	
 	private String nome;
 	
-	@ManyToMany(fetch=FetchType.EAGER, cascade=CascadeType.PERSIST)
-	private List<Role> roles = new ArrayList<Role>();
+	@OneToMany(fetch=FetchType.EAGER)
+	private List<Role> roles = new ArrayList<>();
 
 	public String getEmail() {
 		return email;
@@ -51,7 +50,7 @@ public class Usuario implements UserDetails {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	
+
 	public List<Role> getRoles() {
 		return roles;
 	}
@@ -94,5 +93,7 @@ public class Usuario implements UserDetails {
 	public boolean isEnabled() {
 		return true;
 	}
+	
+	
 	
 }
