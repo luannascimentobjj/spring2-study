@@ -12,7 +12,9 @@
 				<nav id="main-nav">
 					
 					<ul class="clearfix">
-						<li><a href="${s:mvcUrl('CCC#itens').build() }" rel="nofollow"><fmt:message key="menu.carrinho"/></a></li>
+						<li><a href="${s:mvcUrl('CCC#itens').build() }" rel="nofollow">
+						<s:message code="menu.carrinho" arguments="${carrinhoCompras.quantidade }"/> 
+						</a></li>
 
 						<li><a href="/pages/sobre-a-casa-do-codigo" rel="nofollow"><fmt:message key="menu.sobre"/></a></li>
 
