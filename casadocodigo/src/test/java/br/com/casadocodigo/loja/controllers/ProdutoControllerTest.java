@@ -38,6 +38,7 @@ public class ProdutoControllerTest {
 	@Test
 	public void deveRetornarParaHomeComOsLivros() throws Exception {
 		mockMvc.perform(MockMvcRequestBuilders.get("/"))
+			.andExpect(MockMvcResultMatchers.model().attributeExists("produtos"))
 			.andExpect(MockMvcResultMatchers.forwardedUrl("/WEB-INF/views/home.jsp"));
 	}
 
